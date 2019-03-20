@@ -66,11 +66,18 @@ buildProducts = (ps) =>{
     let domString = '';
     ps.forEach((p)=>{
 
-        domString += `<div class='cards'>`;
+        domString += `<div class='container col-md-4 row align-items-center'>`;
         domString += `<h2>${p.title}</h2>`;
+        domString +=            `    <div class="card">`;
+        domString += `<div class="card-header"> featured </div>`
+        domString +=             `   <img src=${p.imageUrl} class="card-img-top" alt="...">`;
+        domString +=             `  <div class="card-body">`;
+        domString +=              `  <p class="card-text">${p.description}</p>`;
+        domString +=              ` </div>`;
+        domString +=               ` </div>`;
         domString += `</div>`;
     });
-    printToDom('xd',domString);
+    printToDom('productCard',domString);
 };
 
 const init = () =>{
